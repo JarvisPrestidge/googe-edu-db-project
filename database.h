@@ -1,5 +1,6 @@
-// database.h, Maggie Johnson
+// database.h: Jarvis Prestidge.
 // Description: Class for a database of Composer records.
+
 #include  <iostream>
 #include "Composer.h"
 
