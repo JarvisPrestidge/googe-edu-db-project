@@ -1,7 +1,9 @@
 // database.h: Jarvis Prestidge.
 // Description: Class for a database of Composer records.
 
-#include  <iostream>
+#ifndef H_DATABASE
+#define H_DATABASE
+
 #include "Composer.h"
 
 // Our database holds 100 composers, and no more.
@@ -30,3 +32,5 @@ class Database {
   // Track the next slot in the array to place a new record.
   int next_slot_;
 };
+
+#endif

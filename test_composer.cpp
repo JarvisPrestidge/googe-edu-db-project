@@ -2,7 +2,7 @@
 // Description: This program tests the Composer class.
 
 #include <iostream>
-#include "Composer.h"
+#include "composer.h"
 
 using namespace std;
 
