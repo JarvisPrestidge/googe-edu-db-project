@@ -14,6 +14,15 @@ using std::string;
 const int kDefaultRanking = 10;
 
 class Composer {
+
+  // Private by default
+  string first_name_;
+  string last_name_;
+  string composer_genre_; // baroque, classical, romantic, etc.
+  string fact_;
+  int composer_yob_; // year of birth
+  int ranking_;
+
  public:
   // Constructor
   Composer();
@@ -33,7 +42,7 @@ class Composer {
   void set_composer_genre(string in_composer_genre);
   string composer_genre();
   void set_ranking(int in_ranking);
-  int ranking();
+  int ranking() const;
   void set_fact(string in_fact);
   string fact();
 
@@ -44,14 +53,7 @@ class Composer {
   void Demote(int decrement);
   // This method displays all the attributes of a composer.
   void Display();
-
- private:
-  string first_name_;
-  string last_name_;
-  string composer_genre_; // baroque, classical, romantic, etc.
-  string fact_;
-  int composer_yob_; // year of birth
-  int ranking_;
+  
 };
 
 #endif

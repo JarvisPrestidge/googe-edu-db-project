@@ -12,9 +12,8 @@ const int di = 0;
 using namespace std;
 
 // Default constructor with initialisation list
-Composer::Composer() : first_name_(ds), last_name_ (ds), fact_(ds),
-                       composer_genre_(ds), composer_yob_(di),
-                       ranking_(di) {}
+Composer::Composer() : first_name_(ds), last_name_ (ds), composer_genre_(ds), fact_(ds), composer_yob_(di),
+                       ranking_(kDefaultRanking) {}
 
 // Default destructor
 Composer::~Composer() {
@@ -61,7 +60,7 @@ void Composer::set_ranking(int in_ranking) {
 	ranking_ = in_ranking;
 }
 
-int Composer::ranking() {
+int Composer::ranking() const {
 	return ranking_;
 }
 
@@ -75,18 +74,28 @@ string Composer::fact() {
 }
 
 void Composer::Promote(int increment) {
-	ranking_ += increment;
+	if ((ranking_ - increment) < 1) {
+    cout << "Cannot promote composer any higher, currently rank 1." << endl;
+    cout << endl;
+    return;
+  } else {
+    ranking_ -= increment;
+  }
 }
 
 // This method decreases a composer's rank by decrement.
 void Composer::Demote(int decrement) {
-	ranking_ -= decrement;
+	if ((ranking_ + decrement) > 100) {
+    cout << "Cannot demote composer any lower, currently rank 100" << endl;
+    cout << endl;
+    return;
+  } else {
+    ranking_ += decrement;
+  }
 }
 
 // This method displays all the attributes of a composer.
 void Composer::Display() {
-  cout << "Composer Attributes" << endl;
-  cout << endl;
 
   cout << "First name: \t" << first_name_ << endl;
   cout << "Last name: \t" << last_name_ << endl;
