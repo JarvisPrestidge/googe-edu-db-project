@@ -74,11 +74,13 @@ void AddComposer(Database &db) {
   // Store the input
   string first  = GetInput(typeStr, first_name);
   string last   = GetInput(typeStr, last_name);
-  string genre  = GetInput(typeStr, composer_genre);
 
   // Flush previous cin buffer for \n that getline would read
   cin.ignore(1000, '\n');
   cin.clear();
+  string genre; cout << composer_genre; getline(cin, genre);
+
+  // Flush previous cin buffer for \n that getline would read
   string fact; cout << composer_fact; getline(cin, fact);
 
   int yob       = GetInput(typeInt, composer_yob);
